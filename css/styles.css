@@ -348,6 +348,8 @@ body {
   width: 20px;
   height: 20px;
   fill: var(--primary-icon-color);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms, background-color 250ms;
 }
 
 /*Постоянные клиенты*/
@@ -387,6 +389,8 @@ body {
   fill: var(--primary-icon-color);
   align-items: center;
   justify-content: center;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms, border-color 250ms;
 }
 
 /*Подвал страницы*/
@@ -482,7 +486,7 @@ body {
   font-size: 16px;
   line-height: 1.62;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition: color 250ms, background-color 250ms box-shadow 250ms;
+  transition: color 250ms, background-color 250ms, box-shadow 250ms;
 }
 .buttons:hover,
 .buttons:focus {
@@ -495,8 +499,10 @@ body {
   display: flex;
   justify-content: center;
   margin-bottom: 50px;
-  transition: color 250ms, background-color 250ms box-shadow 250ms;
+}
+.section-main-buttons .current {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms, background-color 250ms, box-shadow 250ms;
 }
 .section-main-buttons .current {
   color: var(--secondary-text-color);
@@ -519,6 +525,8 @@ body {
   margin-left: 30px;
   margin-top: 30px;
   flex-basis: calc(100% / 9 - 30px);
+}
+.item-pictures .link {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition: box-shadow 250ms;
 }
