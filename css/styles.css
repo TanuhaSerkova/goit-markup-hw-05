@@ -60,8 +60,7 @@ body {
 }
 .site-nav .link,
 .auth-nav .contacts {
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition: color 250ms;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .site-nav .link:hover,
 .site-nav .link:focus,
@@ -79,6 +78,9 @@ body {
 }
 .link {
   text-decoration: none;
+}
+img {
+  display: block;
 }
 .header-item:not(:last-child) {
   margin-right: 50px;
@@ -105,7 +107,7 @@ body {
   border-radius: 2px;
   background-color: var(--accent-color);
   display: block;
-  bottom: 0px;
+  bottom: -1px;
 }
 .contacts-container {
   margin-left: auto;
@@ -268,12 +270,10 @@ body {
   margin-top: 30px;
   flex-basis: calc(100% / 3 - 30px);
   position: relative;
-  overflow: hidden;
 }
 .item-img-title {
-  top: 0;
+  bottom: 0;
   width: 100%;
-  height: 70px;
   padding: 27px;
   color: var(--secondary-text-color);
   background-color: rgba(47, 48, 58, 0.8);
@@ -283,7 +283,6 @@ body {
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
-  transform: translateY(320%);
 }
 
 /*Наша команда*/
@@ -340,13 +339,11 @@ body {
 .social-link {
   width: 100%;
   height: 100%;
-  display: block;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition: background-color 250ms;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-link:hover,
 .social-link:focus {
@@ -360,8 +357,7 @@ body {
   width: 20px;
   height: 20px;
   fill: var(--primary-icon-color);
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition: fill 250ms;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*Постоянные клиенты*/
@@ -379,8 +375,7 @@ body {
   border-radius: 4px;
   align-items: center;
   justify-content: center;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition: border-color 250ms;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-link:hover,
 .clients-link:focus {
@@ -401,8 +396,7 @@ body {
   fill: var(--primary-icon-color);
   align-items: center;
   justify-content: center;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition: fill 250ms;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*Подвал страницы*/
@@ -443,8 +437,7 @@ body {
 .footer-contacts {
   font-weight: 400;
   line-height: 1.71;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition: color 250ms;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-address:hover,
 .footer-address:focus {
@@ -465,16 +458,11 @@ body {
 .footer-list-icon {
   display: flex;
 }
-.footer-social {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-}
 .footer-icon {
   fill: var(--secondary-text-color);
 }
 .footer-link {
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition: background-color 250ms;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 .footer-link:hover,
 .footer-link:focus {
@@ -496,8 +484,9 @@ body {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.62;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition: color 250ms, background-color 250ms, box-shadow 250ms;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .buttons:hover,
 .buttons:focus {
@@ -512,8 +501,9 @@ body {
   margin-bottom: 50px;
 }
 .section-main-buttons .current {
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition: color 250ms, background-color 250ms, box-shadow 250ms;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .section-main-buttons .current {
   color: var(--secondary-text-color);
@@ -531,16 +521,17 @@ body {
 }
 .item-pictures .link {
   display: block;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition: color 250ms, background-color 250ms, box-shadow 250ms;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .item-pictures {
   margin-left: 30px;
   margin-top: 30px;
   flex-basis: calc(100% / 9 - 30px);
 }
-.item-pictures:hover .section-portfolio-text {
+.item-pictures .link:hover .section-portfolio-text,
+.item-pictures .link:focus .section-portfolio-text {
   transform: translateY(0);
+  opacity: 1;
 }
 .section-portfolio-wrapper {
   position: relative;
@@ -553,16 +544,18 @@ body {
 }
 .section-portfolio-text {
   color: var(--secondary-text-color);
-  background-color: var(--accent-color);
+  background-color: rgba(33, 150, 243, 0.9);
   font-weight: 400;
   font-size: 18px;
   line-height: 1.56;
   position: absolute;
   top: 0;
+  opacity: 0;
   height: 100%;
   padding: 63px 24px;
   transform: translateY(100%);
-  transition: transform 250ms linear;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-pictures {
   border-bottom: 1px solid #eeeeee;
@@ -605,6 +598,7 @@ body {
 
 .backdrop.is-hidden .modal {
   transform: scale(2);
+  opacity: 0;
 }
 
 .modal {
@@ -616,7 +610,8 @@ body {
     0px 2px 1px rgba(0, 0, 0, 0.2);
   position: relative;
   transform: scale(1);
-  transition: transform 250ms ease;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-button {
